@@ -1,0 +1,50 @@
+test:
+  application_name: "Application Name"
+  twitter:
+    api_key: ""
+    api_secret: ""
+  stripe:
+    api_key: ""
+    api_publish: ""
+  mixpanel:
+    api_key: ""
+    api_secret: ""
+    token: ""
+  google_analytics:
+    domain: ".com"
+    account: ""
+  mandrill_api_key: ""
+
+development:
+  application_name: "Application Name"
+  twitter:
+    api_key: ""
+    api_secret: ""
+  stripe:
+    api_key: ""
+    api_publish: ""
+  mixpanel:
+    api_key: ""
+    api_secret: ""
+    token: ""
+  google_analytics:
+    domain: ".com"
+    account: ""
+  mandrill_api_key: ""
+
+production:
+  application_name: "Application Name"
+  twitter:
+    api_key: ""
+    api_secret: ""
+  stripe:
+    api_key: ""
+    api_publish: ""
+  mixpanel:
+    api_key: ""
+    api_secret: ""
+    token: ""
+  google_analytics:
+    domain: ".com"
+    account: ""
+  mandrill_api_key: ""

@@ -1,0 +1,26 @@
+<h1>Plans</h1>
+
+<div class='row'>
+  <table class='col-md-12 plans-table'>
+    <% @plans.each do |plan| %>
+      <td width="33%" class="row plan <%= plan == @current_plan ? 'plan-current' : nil %>">
+        <h2><%= plan.name %></h2>
+        <div class='description'><%= plan.description %></div>
+        <div class='price'>
+          <% if plan.free? %>
+            Free
+          <% else %>
+            <%= number_to_currency(plan.amount) %>/mo
+          <% end %>
+        </div>
+        <div class='purchase'>
+          <% unless plan.free? || @current_plan == plan %>
+          <% purchase_link = current_user ? checkout_plan_path(plan) : user_omniauth_authorize_path(:twitter) %>
+          <%= link_to "Purchase", purchase_link,
+              class: 'btn btn-success btn-purchase' %>
+          <% end %>
+        </div>
+      </td>
+    <% end %>
+  </table>
+</div>

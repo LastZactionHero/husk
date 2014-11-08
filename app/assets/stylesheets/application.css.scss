@@ -1,0 +1,169 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "font-awesome";
+@import "bootstrap";
+@import "colors";
+@import "bootstrap3-switch";
+
+//body { padding-top: 70px; }
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.body-dashboard {
+  padding-top: 70px;
+}
+
+.devise-panel {
+  h2 {
+    font-size: 20px;
+  }
+
+  .panel-heading {
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
+
+.navbar-theme {
+  background-color: $color_main_primary;
+  border: 0px solid $color_main_secondary;
+  color: white;
+
+  a {
+    color: white;
+  }
+}
+// Landing Page
+.container-landing {
+  width: 100% !important;
+  padding: 0px !important;
+
+  .landing-panel {
+    padding: 36px;
+  }
+
+  .landing-header {
+    background-color: $color_main_dark;
+    color: white;
+    padding-top: 8px;
+    padding-bottom: 8px;
+
+    a {
+      margin: 0px 16px;
+      color: white;
+    }
+  }
+
+  .landing-main {
+    min-height: 400px;
+    padding-top: 64px;
+
+    background-color: $color_main_primary;
+    background-size: cover;
+
+    color: white;
+    border-bottom: 16px solid $color_main_dark;
+
+    h1 {
+      font-size: 64px;
+    }
+
+    .row-sign-up {
+      margin-top: 36px;
+
+      .btn-sign-up {
+        padding: 8px 20px;
+        background-color: $color_alternate_primary;
+        font-size: 36px;
+        color: white;
+      }
+    }
+  }
+
+  .landing-description {
+    background-color: white;
+
+    .large-icon {
+      color: $color_main_light;
+      text-align: center;
+      font-size: 64px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  }
+
+  .landing-pricing {
+    background-color: $color_background_gray;
+    border-bottom: 16px solid $color_main_dark;
+
+    .price-highlight {
+      color: $color_alternate_primary;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  }
+
+}
+
+.btn-alternate {
+  background-color: $color_alternate_primary;
+}
+
+.plans-table {
+  border: 1px solid $color_background_gray;
+
+  .plan {
+    padding: 16px 16px 24px 16px;
+    background-color: $color_background_gray;
+
+    h2 {
+      text-align: center;
+    }
+
+    .description {
+      text-align: center;
+    }
+
+    .price {
+      margin: 20px 0px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 36px;
+    }
+
+    .purchase {
+      text-align: center;
+
+      .btn-purchase {
+      }
+    }
+  }
+
+  .plan-current {
+    background-color: white;
+  }
+}
+
+.payment-errors {
+  margin-bottom: 16px;
+  color: red;
+}

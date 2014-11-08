@@ -1,0 +1,54 @@
+<%= content_for :javascript do %>
+  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<% end %>
+
+<h1>Purchase Plan</h1>
+
+<div class='row'>
+  <div class='col-md-6'>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <%= @plan.name %> - <%= number_to_currency(@plan.amount) %>/mo
+        </h3>
+      </div>
+      <div class="panel-body">
+        <%= form_tag(purchase_plan_path(@plan), method: :post, id: 'payment-form') do %>
+          <div class="payment-errors"></div>
+
+          <div class="form-group">
+            <%= label_tag "paymentCardNumber", "Card Number" %>
+            <%= text_field_tag :number, nil, class: 'form-control',
+              id: 'paymentCardNumber', "data-stripe" => "number", size: 20 %>
+          </div>
+
+          <div class='row'>
+            <div class="form-group col-md-4">
+              <%= label_tag "paymentCVC", "CVC" %>
+              <%= text_field_tag :cvc, nil, class: 'form-control',
+                id: 'paymentCVC', "data-stripe" => "cvc", size: 4 %>
+            </div>
+
+            <div class="form-group col-md-8">
+              <%= label_tag "paymentMonth", "Expiration (MM/YYYY)" %>
+              <div class='row'>
+                <div class='col-md-6'>
+                  <%= text_field_tag :paymentMonth, nil, class: 'form-control',
+                    id: 'paymentMonth', "data-stripe" => "exp-month", size: 2,
+                    placeholder: '01' %>
+                </div>
+                <div class='col-md-6'>
+                  <%= text_field_tag :paymentYear, nil, class: 'form-control',
+                    id: 'paymentYear', "data-stripe" => "exp-year", size: 4,
+                    placeholder: '2019' %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <%= submit_tag "Purchase", class: 'btn btn-success' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= APP_SETTINGS["application_name"] %></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= render partial: 'layouts/analytics' %>
+
+  <%= csrf_meta_tags %>
+  <meta name="google-site-verification" content="Z_w-rF8_waeuE8xIBS0Bmqw4_uhOeOxPf67eMYDZjSw" />
+</head>
+<body>
+
+  <div class='container container-landing'>
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
+    <%= yield %>
+  </div>
+
+</body>
+</html>

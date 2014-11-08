@@ -1,0 +1,64 @@
+<div class='landing-panel landing-header'>
+  <div class='row'>
+    <div class='col-md-1 pull-right text-right'>
+      <%= link_to raw("#{fa_icon 'twitter'} Sign In"),
+        user_omniauth_authorize_path(:twitter),
+        class: 'btn' %>
+    </div>
+  </div>
+</div>
+
+<div class='landing-panel landing-main'>
+  <div class='row'>
+    <div class='col-md-12'>
+      <h1><%= APP_SETTINGS['application_name'] %></h1>
+      <h2>Tag line about your application.</h2>
+    </div>
+  </div>
+  <div class='row row-sign-up'>
+    <div class='col-md-12 text-center'>
+      <%= link_to raw("#{fa_icon 'twitter'} Sign Up"),
+        user_omniauth_authorize_path(:twitter),
+        class: 'btn btn-sign-up' %>
+    </div>
+  </div>
+</div>
+
+<div class='landing-panel landing-description row'>
+  <div class='col-md-4'>
+    <h3 class='text-center'>Thing 1</h3>
+    <div class='large-icon'>
+      <%= fa_icon 'location-arrow' %>
+    </div>
+    <p class='text-center'>
+      Response 1
+    </p>
+  </div>
+  <div class='col-md-4'>
+    <h3 class='text-center'>Thing 2</h3>
+    <div class='large-icon'>
+      <%= fa_icon 'star' %>
+    </div>
+    <p class='text-center'>
+      Response 2
+    </p>
+  </div>
+  <div class='col-md-4'>
+    <h3 class='text-center'>Thing 3</h3>
+    <div class='large-icon'>
+      <%= fa_icon 'users' %>
+    </div>
+    <p class='text-center'>
+      Response 3
+    </p>
+  </div>
+</div>
+
+<div class='landing-panel landing-pricing row'>
+  <div class='col-md-12'>
+    <h2 class='text-center'><%= link_to "Free to $x/month", plans_path %></h2>
+    <p class='text-center'>
+      Tagline
+    </p>
+  </div>
+</div>
